@@ -119,12 +119,33 @@
             </form>
         </div>
         <!--map-->
-        <div class="contact-map"></div>
+        <div id="map" class="contact-map"></div>
+        <script>
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              const uluru = { lat: 58.349451, lng: 26.714695 };
+              // The map, centered at Uluru
+              const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+              });
+              // The marker, positioned at Uluru
+              const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+              });
+            }
+          </script>
+        
     </section>
 
     <!--#footer-->
-    <footer id="footer">
+    <footer id="footer" class="bg-dark text-center py-1">
+        <p>Kõik õigused on kaitstud &copy;2021</p>
     </footer>
-    
+    <!--map script-->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD6vBYpS7Hxsl-dHCfL4jpG9y6D9UqP1Q&libraries=maps,marker&v=beta"
+    defer></script>
 </body>
 </html>
